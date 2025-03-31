@@ -1,5 +1,7 @@
 # Este script define as interações do mod TrueBank no celular e no computador.
 
+from icon_manager import IconManager
+
 class TrueBankInteraction:
     def __init__(self, device_type):
         self.device_type = device_type
@@ -8,6 +10,7 @@ class TrueBankInteraction:
         self.is_employed = False  # Situação de emprego do Sim
         self.income = 0  # Renda do Sim
         self.age_group = "adult"  # Grupo etário do Sim (pode ser 'child', 'teen', 'adult', 'elder')
+        self.icon_manager = IconManager(device_type)  # Inicializa o gerenciador de ícones
 
     def access_truebank(self):
         self.show_message("Bem-vindo(a) ao TrueBank!", "Acesse todas as suas contas e serviços diretamente de qualquer dispositivo.")
@@ -128,13 +131,10 @@ class TrueBankInteraction:
             print(f"- {option}")
 
     def add_bank_icon(self):
-        # Código para adicionar o ícone do banco no menu do celular
-        print(f"Ícone do TrueBank adicionado ao {self.device_type}")
+        # Adiciona o ícone do banco no menu do celular usando o IconManager
+        self.icon_manager.add_icon_to_menu()
 
-    def add_computer_options(self):
-        # Código para adicionar opções no menu do computador
-        print("Opções do TrueBank adicionadas ao computador")
-
+    # Outras funções do TrueBankInteraction...
 
 # Exemplo de uso
 celular_interaction = TrueBankInteraction("celular")
