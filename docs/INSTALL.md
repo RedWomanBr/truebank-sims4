@@ -21,8 +21,8 @@
   - Utilize cartões de crédito com diferentes limites e cartões de débito vinculados à conta corrente.
 - **Acesso Digital:**
   - Acesse o TrueBank através do celular ou do computador no jogo.
-  - No celular, selecione a opção "Acessar TrueBank".
-  - No computador, selecione a opção "Acessar TrueBank".
+  - No celular, selecione a opção "Acessar TrueBank" e veja o ícone do banco.
+  - No computador, selecione a opção "Acessar TrueBank" no menu do computador.
 
 ## Exemplos de Código
 Veja os arquivos de script para exemplos de como utilizar as funcionalidades.
