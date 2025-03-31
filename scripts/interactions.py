@@ -38,16 +38,19 @@ class TrueBankInteraction:
         print("Poupança Jovem Sim criada")
 
     def request_loan(self, amount):
-        if self.is_loan_approved(amount):
-            self.show_message("Empréstimo Aprovado!", 
-                f"Parabéns! Seu empréstimo de {amount} simoleons foi aprovado. Utilize o dinheiro com sabedoria."
-            )
-            self.account_balance += amount  # Adiciona o valor do empréstimo ao saldo da conta
-        else:
-            self.show_message("Empréstimo Negado", 
-                "Infelizmente, seu empréstimo não foi aprovado. Tente novamente mais tarde ou entre em contato com o banco para mais informações."
-            )
-        print("Solicitação de empréstimo processada")
+    if amount <= 0:
+        self.show_message("Erro", "O valor solicitado deve ser positivo.")
+        return
+    if self.is_loan_approved(amount):
+        self.show_message("Empréstimo Aprovado!", 
+            f"Parabéns! Seu empréstimo de {amount} simoleons foi aprovado. Utilize o dinheiro com sabedoria."
+        )
+        self.account_balance += amount  # Adiciona o valor do empréstimo ao saldo da conta
+    else:
+        self.show_message("Empréstimo Negado", 
+            "Infelizmente, seu empréstimo não foi aprovado. Tente novamente mais tarde ou entre em contato com o banco para mais informações."
+        )
+    print("Solicitação de empréstimo processada")
 
     def is_loan_approved(self, amount):
         # Regras fictícias de aprovação de empréstimo
